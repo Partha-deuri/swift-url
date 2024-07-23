@@ -21,7 +21,7 @@ export default function Home() {
   }
   const fetchData = async (url) => {
     setResult(false)
-    const res = await fetch('http://localhost:5000/api/shorturl', {
+    const res = await fetch('https://swift-url-api.onrender.com/api/shorturl', {
       method: "POST",
       body: JSON.stringify({ longUrl: url }),
       headers: {
@@ -48,7 +48,7 @@ export default function Home() {
       res
         .then((response) => response.json())
         .then(json => {
-          setShortUrl('http://localhost:3000/' + json.shortUrl);
+          setShortUrl('https://swift-url.onrender.com/' + json.shortUrl);
           setResult(true);
           // console.log(json);
         })
