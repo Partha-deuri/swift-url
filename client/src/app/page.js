@@ -115,7 +115,7 @@ export default function Home() {
             </div>
             <div className="">
               <div className="text-center font-semibold">Created by Partha</div>
-              <div className="text-center text-sm font-semibold">Only for educational uses.</div>
+              <div className="text-center text-sm font-semibold">Only for educational purpose.</div>
             </div>
           </div>
         </div>
