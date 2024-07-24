@@ -109,8 +109,10 @@ export default function Home() {
                 <div className="">User Friendly</div>
               </div>
               <div className="border-2 border-black w-1/5 min-w-fit p-2 flex justify-center items-center rounded">
-
-                <div className="">Learning</div>
+                <div className=''>
+                  Check out the code at
+                  <Link href='https://github.com/Partha-deuri/swift-url' className="">swift-url</Link>
+                </div>
               </div>
             </div>
             <div className="">
