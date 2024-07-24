@@ -115,7 +115,7 @@ export default function Home() {
               <div className="text-center text-sm font-semibold">Only for educational purpose.</div>
                 <div className='text-center text-sm font-semibold'>
                   Check out the code &nbsp;
-                  <Link href='https://github.com/Partha-deuri/swift-url' className="">@partha-deuri/swift-url</Link>
+                  <Link href='https://github.com/Partha-deuri/swift-url' className="text-blue-500">@partha-deuri/swift-url</Link>
                 </div>
               
             </div>
