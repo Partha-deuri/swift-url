@@ -96,26 +96,28 @@ export default function Home() {
           </div>
           <div className="border-2 rounded mt-4 p-2 shadow-lg ">
             <div className="flex gap-4 justify-around h-[140px] font-semibold mb-6 flex-wrap">
-              <div className="bg-black text-white w-1/5 min-w-fit p-2 flex justify-center items-center rounded">
+              <div className="bg-black text-white w-1/4 min-w-fit p-2 flex justify-center items-center rounded">
                 {/* <img src="" alt="" /> */}
                 <div className="">Easy and Fast</div>
               </div>
-              <div className="border-2 border-black w-1/5 min-w-fit p-2 flex justify-center items-center rounded">
+              <div className="border-2 border-black w-1/4 min-w-fit p-2 flex justify-center items-center rounded">
 
                 <div className="">Clean and Simple</div>
               </div>
-              <div className="bg-black text-white w-1/5 min-w-fit p-2 flex justify-center items-center rounded">
+              <div className="bg-black text-white w-1/4 min-w-fit p-2 flex justify-center items-center rounded">
 
                 <div className="">User Friendly</div>
               </div>
-              <div className="border-2 border-black w-1/5 min-w-fit p-2 flex justify-center items-center rounded">
-
-                <div className="">Learning</div>
-              </div>
+              
             </div>
             <div className="">
               <div className="text-center font-semibold">Created by Partha</div>
-              <div className="text-center text-sm font-semibold">Only for educational uses.</div>
+              <div className="text-center text-sm font-semibold">Only for educational purpose.</div>
+                <div className='text-center text-sm font-semibold'>
+                  Check out the code &nbsp;
+                  <Link href='https://github.com/Partha-deuri/swift-url' className="text-blue-500">@partha-deuri/swift-url</Link>
+                </div>
+              
             </div>
           </div>
         </div>
