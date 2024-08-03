@@ -8,7 +8,7 @@ const Redirect = () => {
 
   // console.log(shortUrl.slice(1))
   const fetchData = async () => {
-    const res = await fetch('https://swift-url-api.onrender.com/api/longurl', {
+    const res = await fetch('http://localhost:5000/api/longurl', {
       method: "POST",
       body: JSON.stringify({ shortUrl: shortUrl }),
       headers: {

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, 
+          initial-scale=1.0"
+        />
+        <title>Swift-url</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=roboto"
+        />
+        <style>
+            body {
+                font-family: "roboto", sans-serif;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav class="flex justify-between bg-black py-3">
+            <a
+                href="./"
+                class="cursor-pointer p-2 ml-2 font-bold text-white rounded-md hover:text-gray-400"
+            >
+                Swift URL
+            </a>
+            <div
+                class="flex justify-around items-center gap-5 mr-5 text-white font-semibold"
+            >
+                <a
+                    href="./"
+                    class="cursor-pointer p-2 rounded-md hover:text-gray-400"
+                >
+                    Home
+                </a>
+            </div>
+        </nav>
+        <main>
+            <div class="pt-2">
+                <div class="p-2">
+                    <div class="">
+                        <div class="mb-4 p-2 bg-slate-200">
+                            <span> Tired of long and complex links? </span>
+                            <br />
+                            <span class="text-sm">
+                                Try out swift URL which shorthens your urls and
+                                make them easy to remember and use.
+                            </span>
+                        </div>
+                    </div>
+                    <div
+                        class="p-6 flex gap-4 items-center flex-col border-2 rounded shadow-lg"
+                    >
+                        <div
+                            class="flex justify-center items-center gap-2 w-[80%]"
+                        >
+                            <input
+                                id="url-inp"
+                                placeholder="Paste your long link here..."
+                                type="text"
+                                class="border-2 active:border h-full rounded w-11/12 p-2"
+                            />
+                            <button
+                                class="bg-orange-200 p-2 rounded w-fit font-bold"
+                                id="paste-btn"
+                            >
+                                Paste
+                            </button>
+                        </div>
+                        <div>
+                            <div>
+                                <button
+                                    class="bg-lime-500 p-2 rounded-lg text-white font-semibold"
+                                    id="lets-go-btn"
+                                >
+                                    Let's Go!
+                                </button>
+                            </div>
+                        </div>
+                        <div class="" id="result-box">
+                            <div class="text-center">
+                                Here is your short url.
+                            </div>
+                            <div
+                                class="my-4 flex flex-col items-center gap-1 sm:flex-row"
+                            >
+                                <div
+                                    class="border p-2 rounded"
+                                    id="short-url-box"
+                                >
+                                    {shortUrl}
+                                </div>
+                                <div
+                                    id="copy-btn"
+                                    class="bg-blue-600 p-2 font-bold text-white rounded-md w-fit cursor-pointer"
+                                >
+                                    Copy
+                                </div>
+                                <a
+                                    id="goto-link"
+                                    class="bg-green-600 p-2 font-bold text-white rounded-md w-fit cursor-pointer"
+                                    target="_blank"
+                                    >Goto Link</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-2 rounded mt-4 p-2 shadow-lg">
+                        <div class="border-2 rounded mt-4 p-2 shadow-lg">
+                            <div
+                                class="flex gap-4 justify-around h-[140px] font-semibold mb-6 flex-wrap"
+                            >
+                                <div
+                                    class="bg-black text-white w-1/4 min-w-fit p-2 flex justify-center items-center rounded"
+                                >
+                                    <div class="">Easy and Fast</div>
+                                </div>
+                                <div
+                                    class="border-2 border-black w-1/4 min-w-fit p-2 flex justify-center items-center rounded"
+                                >
+                                    <div class="">Clean and Simple</div>
+                                </div>
+                                <div
+                                    class="bg-black text-white w-1/4 min-w-fit p-2 flex justify-center items-center rounded"
+                                >
+                                    <div class="">User Friendly</div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="text-center font-semibold">
+                                    Created by Partha
+                                </div>
+                                <div class="text-center text-sm font-semibold">
+                                    Only for educational purpose.
+                                </div>
+                                <div class="text-center text-sm font-semibold">
+                                    Check out the code &nbsp;
+                                    <a
+                                        href="https://github.com/Partha-deuri/swift-url"
+                                        target="_blank"
+                                        class="text-blue-500"
+                                        >@partha-deuri/swift-url</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+    <script src="./func.js"></script>
+</html>
