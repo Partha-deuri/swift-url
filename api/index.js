@@ -43,7 +43,7 @@ const URL = require("./Url")
 app.post('/api/shorturl', async (req, res) => {
     // console.log(req.body);
     const oldUrl = await URL.findOne({longUrl: req.body.longUrl});
-    if(oldUrl) return res.status(200).json(savedUrl);
+    if(oldUrl) return res.status(200).json(oldUrl);
     let uid = crypto.randomBytes(3).toString("hex");
     // console.log(uid);
     const currUrl = await URL.findOne({shortUrl:uid});
