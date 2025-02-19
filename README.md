@@ -1,4 +1,4 @@
-# URL Shortener
+# Swift URL Shortener
 
 A simple URL shortener made using only HTML, TailwindCSS, and JavaScript.
 
