@@ -35,6 +35,7 @@ const handlePaste = () => {
 }
 const handleCopy = async () => {
     navigator.clipboard.writeText(shortUrlBox.innerText);
+    window.alert('Copied to clipboard!');
 }
 const fetchData = async (url) => {
     result = false;
