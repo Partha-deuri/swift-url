@@ -7,6 +7,7 @@ const resultBox = document.getElementById('result-box');
 const shortUrlBox = document.getElementById('short-url-box');
 const copyBtn = document.getElementById('copy-btn');
 const gotoBtn = document.getElementById('goto-link');
+const qrCode = document.getElementById('qr-code');
 
 // states
 let shortUrl = ''
@@ -67,6 +68,7 @@ const handleSubmit = async (e) => {
                 shortUrl = 'https://swift-url.onrender.com/?q=' + json.shortUrl;
                 shortUrlBox.innerText = shortUrl;
                 gotoBtn.href = shortUrl;
+                qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
                 showResult()
                 // console.log(json);
             })

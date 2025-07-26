@@ -49,12 +49,12 @@
             <div
                 class="flex justify-around items-center gap-5 mr-5 text-white font-semibold"
             >
-                <a
+                <!-- <a
                     href="#"
                     class="cursor-pointer p-2 rounded-md hover:text-gray-400"
                 >
                     Home
-                </a>
+                </a> -->
             </div>
         </nav>
         <main>
@@ -110,7 +110,7 @@
                                     class="border p-2 rounded"
                                     id="short-url-box"
                                 >
-                                    {shortUrl}
+                                    {blank}
                                 </div>
                                 <div
                                     id="copy-btn"
@@ -124,6 +124,9 @@
                                     target="_blank"
                                     >Goto Link</a
                                 >
+                            </div>
+                            <div>
+                                <img src="https://quickchart.io/qr?text=something_went_wrong" alt="no-qr" id="qr-code" />
                             </div>
                         </div>
                     </div>
