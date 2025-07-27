@@ -39,7 +39,7 @@ const handleCopy = async () => {
 }
 const fetchData = async (url) => {
     result = false;
-    const res = await fetch('https://83db5bd9-8ee1-4e94-8aca-550e8f163a4d-00-2g2jp7hj0ree4.pike.replit.dev/api/shorturl', {
+    const res = await fetch('https://swift-url-api.onrender.com/api/shorturl', {
         method: "POST",
         body: JSON.stringify({ longUrl: url }),
         headers: {
