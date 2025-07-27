@@ -3,7 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const q = urlParams.get("q");
 
 const fetchData = async () => {
-    const res = await fetch('https://83db5bd9-8ee1-4e94-8aca-550e8f163a4d-00-2g2jp7hj0ree4.pike.replit.dev/api/longurl', {
+    const res = await fetch('https://swift-url-api.onrender.com/api/longurl', {
         method: "POST",
         body: JSON.stringify({ shortUrl: q }),
         headers: {
