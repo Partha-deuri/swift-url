@@ -1,5 +1,6 @@
 # Swift URL Shortener [Swift URL](https://swift-url.onrender.com/home.html)
 
+[swift.xo.je]{swift.xo.je}
 
 A simple URL shortener made using only HTML, TailwindCSS, and JavaScript.
 
