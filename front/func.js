@@ -11,7 +11,8 @@ const qrCode = document.getElementById('qr-code');
 
 // states
 // let shortUrl = 'https://sw.42web.io/?q='
-let shortUrl = window.location.href+'/?q='
+// let shortUrl = window.location.href+'/?q='
+let shortUrl = ''
 
 const hideResult = () => {
     resultBox.classList.add('hidden');
@@ -67,7 +68,7 @@ const handleSubmit = async (e) => {
         res
             .then((response) => response.json())
             .then(json => {
-                shortUrl = shortUrl + json.shortUrl;
+                shortUrl = window.location.href+'/q?'+ json.shortUrl;
                 shortUrlBox.innerText = shortUrl;
                 gotoBtn.href = shortUrl;
                 qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
