@@ -68,7 +68,8 @@ const handleSubmit = async (e) => {
         res
             .then((response) => response.json())
             .then(json => {
-                shortUrl = window.location.protocol + window.location.hostname+'/?q='+ json.shortUrl;
+                // shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;
+                shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
                 shortUrlBox.innerText = shortUrl;
                 gotoBtn.href = shortUrl;
                 qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
