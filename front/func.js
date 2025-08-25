@@ -68,12 +68,13 @@ const handleSubmit = async (e) => {
         res
             .then((response) => response.json())
             .then(json => {
-                shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
+                shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
+                // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
                 // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
                 shortUrlBox.innerText = shortUrl;
-                if (!validateUrl(shortUrl)){
-                    shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
-                }
+                // if (!validateUrl(shortUrl)){
+                //     shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
+                // }
                 gotoBtn.href = shortUrl;
                 qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
                 showResult()
@@ -82,6 +83,9 @@ const handleSubmit = async (e) => {
             .catch(err => {
                 console.log(err)
             })
+    } 
+    else{
+        console.log("Invalid Url");
     }
 }
 
