@@ -10,7 +10,8 @@ const gotoBtn = document.getElementById('goto-link');
 const qrCode = document.getElementById('qr-code');
 
 // states
-let shortUrl = 'https://swift.xo.je/?q='
+// let shortUrl = 'https://sw.42web.io/?q='
+let shortUrl = window.location.href+'/?q='
 
 const hideResult = () => {
     resultBox.classList.add('hidden');
