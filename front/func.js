@@ -10,7 +10,7 @@ const gotoBtn = document.getElementById('goto-link');
 const qrCode = document.getElementById('qr-code');
 
 // states
-let shortUrl = ''
+let shortUrl = 'https://swift.xo.je/?q='
 
 const hideResult = () => {
     resultBox.classList.add('hidden');
@@ -66,7 +66,7 @@ const handleSubmit = async (e) => {
         res
             .then((response) => response.json())
             .then(json => {
-                shortUrl = 'https://swift.xo.je/?q=' + json.shortUrl;
+                shortUrl = shortUrl + json.shortUrl;
                 shortUrlBox.innerText = shortUrl;
                 gotoBtn.href = shortUrl;
                 qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
