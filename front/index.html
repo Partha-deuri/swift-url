@@ -85,5 +85,13 @@
             </div>
         </main>
     </body>
+    <script>
+        const wakeUpServer = async () => {
+            await fetch("https://swift-url.onrender.com/api");
+        };
+        document.addEventListener("DOMContentLoaded", () => {
+            wakeUpServer();
+        });
+    </script>
     <!-- <script src="./func.js"></script> -->
 </html>
