@@ -10,6 +10,8 @@ const gotoBtn = document.getElementById('goto-link');
 const qrCode = document.getElementById('qr-code');
 
 // states
+// let shortUrl = 'https://sw.42web.io/?q='
+// let shortUrl = window.location.href+'/?q='
 let shortUrl = ''
 
 const hideResult = () => {
@@ -67,10 +69,15 @@ const handleSubmit = async (e) => {
             .then((response) => response.json())
             .then(json => {
                 // shortUrl = 'http://swift.xo.je/?q=' + json.shortUrl;
-                // shortUrl = 'http://swift.xo.je/?q=' + json.shortUrl;
+                // shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
+                // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
+                // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
                 shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
                 console.log(window.location.href);
                 shortUrlBox.innerText = shortUrl;
+                // if (!validateUrl(shortUrl)){
+                //     shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
+                // }
                 gotoBtn.href = shortUrl;
                 qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
                 showResult()
@@ -79,6 +86,9 @@ const handleSubmit = async (e) => {
             .catch(err => {
                 console.log(err)
             })
+    } 
+    else{
+        console.log("Invalid Url");
     }
 }
 
