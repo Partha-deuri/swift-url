@@ -13,6 +13,13 @@ const qrCode = document.getElementById('qr-code');
 // let shortUrl = 'https://sw.42web.io/?q='
 // let shortUrl = window.location.href+'/?q='
 let shortUrl = ''
+const wakeUpServer = async () => {
+    await fetch("https://swift-url.onrender.com/api");
+};
+wakeUpServer();
+document.addEventListener("DOMContentLoaded", () => {
+    wakeUpServer();
+});
 
 const hideResult = () => {
     resultBox.classList.add('hidden');
@@ -72,7 +79,7 @@ const handleSubmit = async (e) => {
                 // shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
                 // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
                 // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
-                shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
+                shortUrl = window.location.hostname + '/?q=' + json.shortUrl;
                 console.log(window.location.href);
                 shortUrlBox.innerText = shortUrl;
                 // if (!validateUrl(shortUrl)){
@@ -86,8 +93,8 @@ const handleSubmit = async (e) => {
             .catch(err => {
                 console.log(err)
             })
-    } 
-    else{
+    }
+    else {
         console.log("Invalid Url");
     }
 }
