@@ -2,97 +2,65 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, 
-          initial-scale=1.0"
-        />
-        <title>Swift-url</title>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Swift-url | Redirecting...</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=roboto"
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
         <style>
-            body {
-                font-family: "roboto", sans-serif;
+            body { font-family: "Inter", sans-serif; }
+            .loader {
+                border-top-color: #6366f1; /* Tailwind indigo-500 */
+                -webkit-animation: spinner 1.5s linear infinite;
+                animation: spinner 1.5s linear infinite;
+            }
+            @keyframes spinner {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
             }
         </style>
         <script src="redirect.js"></script>
     </head>
 
-    <body>
-        <nav class="flex justify-between bg-black py-3">
-            <a
-                href="./"
-                class="cursor-pointer p-2 ml-2 font-bold text-white rounded-md hover:text-gray-400"
-            >
-                Swift URL
+    <body class="bg-[#070707] text-white min-h-screen flex flex-col">
+        <nav class="flex justify-between items-center py-5 px-6 md:px-12 border-b border-white/10">
+            <a href="./home.html" class="flex items-center gap-2 font-bold text-xl tracking-tight hover:text-indigo-400 transition-colors">
+                <span class="text-indigo-500">⚡</span> Swift URL
             </a>
-            <div
-                class="flex justify-around items-center gap-5 mr-5 text-white font-semibold"
-            >
-                <a
-                    href="./"
-                    class="cursor-pointer p-2 rounded-md hover:text-gray-400"
-                >
-                    Home
-                </a>
+            <div class="flex items-center gap-6 text-sm font-semibold text-gray-400">
+                <a href="./home.html" class="hover:text-white transition-colors">Home</a>
             </div>
         </nav>
-        <main>
-            <div class="pt-2">
-                <div
-                    class="flex justify-center items-center font-bold h-[calc(100vh-150px)]"
-                >
-                    Redirecting...
-                </div>
-                <div class="">
-                    <div class="text-center font-semibold">
-                        Created by Partha
-                    </div>
-                    <div class="text-center text-sm font-semibold">
-                        Only for educational purpose.
-                    </div>
-                    <div class="text-center text-sm font-semibold">
-                        Check out the code &nbsp;
-                        <a
-                            href="https://github.com/Partha-deuri/swift-url"
-                            target="_blank"
-                            class="text-blue-500"
-                            >@partha-deuri/swift-url</a
-                        >
-                    </div>
-                </div>
+
+        <main class="flex-grow flex flex-col items-center justify-center px-4">
+            <div class="flex flex-col items-center justify-center">
+                <div class="loader ease-linear rounded-full border-4 border-t-4 border-white/10 h-16 w-16 mb-6 shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
+                <h1 class="text-3xl font-bold tracking-tight mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-200">
+                    Routing your request...
+                </h1>
+                <p class="text-gray-500 font-medium animate-pulse">Taking you to your destination</p>
             </div>
         </main>
-    </body>
-    <script>
-        const wakeUpServer = async () => {
-            await fetch("https://swift-url.onrender.com/api");
-        };
-        wakeUpServer();
-        document.addEventListener("DOMContentLoaded", () => {
+
+        <footer class="py-6 text-center">
+            <div class="text-xs text-gray-600 font-semibold">
+                Created by Partha • <a href="https://github.com/Partha-deuri/swift-url" target="_blank" class="text-indigo-500 hover:text-indigo-400">@partha-deuri/swift-url</a>
+            </div>
+        </footer>
+
+        <script>
+            const wakeUpServer = async () => {
+                await fetch("https://swift-url.onrender.com/api");
+            };
             wakeUpServer();
-        });
-    </script>
-    <!-- <script src="./func.js"></script> -->
+            document.addEventListener("DOMContentLoaded", () => {
+                wakeUpServer();
+            });
+        </script>
+    </body>
 </html>
