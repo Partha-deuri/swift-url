@@ -73,23 +73,36 @@ const handleSubmit = async (e) => {
         const res = fetchData(url);
         // console.log(res);
         res
-            .then((response) => response.json())
             .then(json => {
-                // shortUrl = 'http://swift.xo.je/?q=' + json.shortUrl;
-                // shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
-                // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
-                // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
-                shortUrl = window.location.hostname + '/?q=' + json.shortUrl;
+                const cleanUrl = window.location.hostname + '/?q=' + json.shortUrl;
+                
+                const absoluteUrl = window.location.protocol + '//' + cleanUrl;
+
                 console.log(window.location.href);
-                shortUrlBox.innerText = shortUrl;
-                // if (!validateUrl(shortUrl)){
-                //     shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
-                // }
-                gotoBtn.href = shortUrl;
-                qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
-                showResult()
-                // console.log(json);
+                
+                shortUrlBox.innerText = cleanUrl; 
+                gotoBtn.href = absoluteUrl;      
+                qrCode.src = 'https://quickchart.io/qr?text=' + absoluteUrl; 
+                
+                showResult();
             })
+            // .then((response) => response.json())
+            // .then(json => {
+            //     // shortUrl = 'http://swift.xo.je/?q=' + json.shortUrl;
+            //     // shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
+            //     // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
+            //     // shortUrl = window.location.hostname+'/?q='+ json.shortUrl;
+            //     shortUrl = window.location.hostname + '/?q=' + json.shortUrl;
+            //     console.log(window.location.href);
+            //     shortUrlBox.innerText = shortUrl;
+            //     // if (!validateUrl(shortUrl)){
+            //     //     shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
+            //     // }
+            //     gotoBtn.href = shortUrl;
+            //     qrCode.src = 'https://quickchart.io/qr?text=' + shortUrl;
+            //     showResult()
+            //     // console.log(json);
+            // })
             .catch(err => {
                 console.log(err)
             })
