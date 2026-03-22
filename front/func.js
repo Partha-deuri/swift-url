@@ -14,7 +14,7 @@ const qrCode = document.getElementById('qr-code');
 // let shortUrl = window.location.href+'/?q='
 let shortUrl = ''
 const wakeUpServer = async () => {
-    await fetch("https://swift-url-api.onrender.com/");
+    await fetch("https://swift-url-api.onrender.com/api/");
 };
 wakeUpServer();
 document.addEventListener("DOMContentLoaded", () => {
