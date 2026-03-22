@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Swift-url | 404 Not Found</title>
+        <title>Swift-url | Redirecting...</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,17 @@
         <link rel="manifest" href="/site.webmanifest" />
         <style>
             body { font-family: "Inter", sans-serif; }
+            .loader {
+                border-top-color: #6366f1; /* Tailwind indigo-500 */
+                -webkit-animation: spinner 1.5s linear infinite;
+                animation: spinner 1.5s linear infinite;
+            }
+            @keyframes spinner {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
         </style>
+        <script src="redirect.js"></script>
     </head>
 
     <body class="bg-[#070707] text-white min-h-screen flex flex-col">
@@ -27,30 +37,30 @@
             </div>
         </nav>
 
-        <main class="flex-grow flex flex-col items-center justify-center px-4 text-center">
-            
-            <h1 class="text-8xl md:text-9xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-indigo-500 to-[#070707] mb-4">
-                404
-            </h1>
-            <h2 class="text-3xl font-bold mb-6 text-gray-200">Link Not Found</h2>
-            <p class="text-gray-400 max-w-md mx-auto mb-8">
-                The short URL you are looking for doesn't exist or may have expired.
-            </p>
-            
-            <a href="./home.html" class="bg-[#111] border border-white/10 hover:border-indigo-500 hover:bg-[#1a1a1a] text-white font-semibold py-3 px-8 rounded-xl transition-all shadow-lg inline-flex items-center gap-2">
-                Create a new link
-            </a>
-
+        <main class="flex-grow flex flex-col items-center justify-center px-4">
+            <div class="flex flex-col items-center justify-center">
+                <div class="loader ease-linear rounded-full border-4 border-t-4 border-white/10 h-16 w-16 mb-6 shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
+                <h1 class="text-3xl font-bold tracking-tight mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-indigo-200">
+                    Routing your request...
+                </h1>
+                <p class="text-gray-500 font-medium animate-pulse">Taking you to your destination</p>
+            </div>
         </main>
 
-        <footer class="py-8 border-t border-white/10 text-center">
-            <div class="text-gray-400 font-semibold mb-1">Created by Partha</div>
-            <div class="text-xs text-gray-600 mb-2">Only for educational purposes.</div>
-            <div class="text-sm font-semibold">
-                <a href="https://github.com/Partha-deuri/swift-url" target="_blank" class="text-indigo-400 hover:text-indigo-300 transition-colors">
-                    View source code on GitHub ↗
-                </a>
+        <footer class="py-6 text-center">
+            <div class="text-xs text-gray-600 font-semibold">
+                Created by Partha • <a href="https://github.com/Partha-deuri/swift-url" target="_blank" class="text-indigo-500 hover:text-indigo-400">@partha-deuri/swift-url</a>
             </div>
         </footer>
+
+        <script>
+            const wakeUpServer = async () => {
+                await fetch("https://swift-url.onrender.com/api");
+            };
+            wakeUpServer();
+            document.addEventListener("DOMContentLoaded", () => {
+                wakeUpServer();
+            });
+        </script>
     </body>
 </html>
