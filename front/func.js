@@ -73,6 +73,7 @@ const handleSubmit = async (e) => {
         const res = fetchData(url);
         // console.log(res);
         res
+            .then((response) => response.json())
             .then(json => {
                 const cleanUrl = window.location.hostname + '/?q=' + json.shortUrl;
                 
@@ -86,7 +87,6 @@ const handleSubmit = async (e) => {
                 
                 showResult();
             })
-            // .then((response) => response.json())
             // .then(json => {
             //     // shortUrl = 'http://swift.xo.je/?q=' + json.shortUrl;
             //     // shortUrl = window.location.protocol +'//' + window.location.hostname+'/?q='+ json.shortUrl;            
